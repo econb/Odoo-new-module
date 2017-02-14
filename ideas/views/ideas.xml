@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+    <data>
+
+        <!--********************** MAIN MENU ***************************-->
+        
+        <!-- top level menu: no parent -->
+        <menuitem id="ideas_main_menu" name="Ideas"/>
+        <!-- A first level in the left side menu is needed
+        before using action= attribute -->
+        <menuitem id="ideas_left_menu" name="Ideas"
+                  parent="ideas_main_menu"/>
+    
+        <!--********************** MODEL: IDEA ***************************-->  
+        <!-- Action -->
+        <record model="ir.actions.act_window" id="ideas_list_action">
+            <field name="name">Ideas</field>
+            <field name="res_model">ideas.idea</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Crear la primera idea.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="ideas_list" name="Ideas" parent="ideas_left_menu"
+                  action="ideas_list_action"/>
+
+        <!--********************** MODEL: VOTO ***************************-->
+        <!-- Action -->
+        <record model="ir.actions.act_window" id="votos_list_action">
+            <field name="name">Votos</field>
+            <field name="res_model">ideas.voto</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Realizar el primer voto.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="votos_list" name="Votos" parent="ideas_left_menu"
+                  action="votos_list_action"/>
+        
+        <!-- LIST OF COURSES VIEW -->
+        <record model="ir.ui.view" id="voto_tree_view">
+            <field name="name">voto.tree</field>
+            <field name="model">ideas.voto</field>
+            <field name="arch" type="xml">
+                <tree string="Voto Tree">
+                    <field name="idea_descripcion"/>
+                    <field name="usuario"/>
+                </tree>
+            </field>
+        </record>
+                  
+        <!--********************** MODEL: USER ***************************-->
+        <!-- Action -->
+        <record model="ir.actions.act_window" id="partner_list_action">
+            <field name="name">Usuarios</field>
+            <field name="res_model">res.users</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Agregar el primer usuario.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="partner_list" name="Usuarios" parent="ideas_left_menu"
+                  action="partner_list_action"/>
+                  
+        <!--********************** MODEL: GRUPO ***************************-->
+        <!-- Action -->
+        <record model="ir.actions.act_window" id="grupo_list_action">
+            <field name="name">Grupos</field>
+            <field name="res_model">ideas.grupo</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">Agregar el primer grupo.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="grupo_list" name="Grupos representativos" parent="ideas_left_menu"
+                  action="grupo_list_action"/>
+        
+    </data>
+</odoo>
