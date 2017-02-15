@@ -9,7 +9,7 @@
         de los usuarios.
     """,
 
-    'author': "Eduardo C.",
+    'author': "",
     'website': "",
 
     # Categories can be used to filter modules in modules listing
