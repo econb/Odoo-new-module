@@ -14,6 +14,6 @@ Put the module Ideas inside your addons folder. In Windows it is `C:\Program Fil
 For updating the module once you have made changes to the code, use: `odoo-bin -d <Database name> --update ideas`.
 
 ###Odoo considerations
-For creating a new module, use: `odoobin scaffold ideas ./odoo/addons`. It will create all the standard files needed for a new module.
+For creating a new module, use: `odoobin scaffold ideas ./odoo/addons`. It will create all the standard files needed for a new module.  
 Service port: 8069. Database port: 5432.  
 Testing in your browser: `localhost:8069`.  
